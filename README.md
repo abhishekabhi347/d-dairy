@@ -1,6 +1,6 @@
-# ddairy 📖🎙️
+# d-dairy 📖🎙️
 
-**A softer place for your days.** ddairy is a voice-first diary for iOS, Android, and web —
+**A softer place for your days.** d-dairy is a voice-first diary for iOS, Android, and web —
 dictate your day, keep one main diary, and make extra books for anything that deserves its
 own space (trips, ideas, work, solo projects).
 

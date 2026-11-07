@@ -1,6 +1,6 @@
-# ddairy — Journaling Keyword Research
+# d-dairy — Journaling Keyword Research
 
-Research notes that shaped ddairy's prompts, tag suggestions, and store copy. The app Titan
+Research notes that shaped d-dairy's prompts, tag suggestions, and store copy. The app Titan
 ("A softer place for your days") leans on the language of popular voice journals and
 diary apps rather than cold productivity labels.
 
@@ -36,7 +36,7 @@ and community phrasing (r/DecidingToBeBetter, r/Journaling, r/BuJo, Product Hunt
 | Mood tracking  | mood, feeling, how was your day, day rating, emotional check-in                |
 | Privacy trust  | private, lock, pin, encrypted, offline, no account                             |
 
-## What ddairy took from it
+## What d-dairy took from it
 
 1. **Default tags** (`src/domain/constants.ts` → `JOURNAL_KEYWORDS`) map clusters to short,
    human tags: `gratitude`, `reflection`, `memories`, `mindfulness`, `self-care`, `wellness`,

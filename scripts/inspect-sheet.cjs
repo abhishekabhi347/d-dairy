@@ -1,5 +1,5 @@
 /* Drive headless Chrome over CDP to inspect the book-switcher sheet layout. */
-const WebSocket = require('/Users/abhishekrampi/ddairy/node_modules/ws');
+const WebSocket = require('/Users/abhishekrampi/d-dairy/node_modules/ws');
 const { execFile, spawn } = require('child_process');
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';

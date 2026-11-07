@@ -53,7 +53,7 @@ function LoadingScreen({ fontsReady }: { fontsReady: boolean }) {
           <Feather name="feather" size={26} color={colors.accent} />
         </View>
         <AppText variant="title" style={{ fontFamily: FONTS.display }}>
-          ddairy
+          d-dairy
         </AppText>
         <AppText variant="bodySmall" align="center">
           {status === 'loading' || !fontsReady ? 'Opening your pages…' : 'Ready when you are.'}

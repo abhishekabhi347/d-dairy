@@ -110,7 +110,7 @@ export default function JournalScreen() {
           <View style={styles.brandBlock}>
             <View style={styles.wordmarkRow}>
               <AppText variant="title" style={styles.wordmark}>
-                ddairy
+                d-dairy
               </AppText>
               <View style={[styles.brandDot, { backgroundColor: colors.accent }]} />
             </View>
@@ -183,7 +183,7 @@ export default function JournalScreen() {
                       How was{'\n'}your day?
                     </AppText>
                     <AppText variant="body" style={[styles.heroSubtitle, { color: colors.textSecondary }]}>
-                      Say it out loud, or write it down. ddairy keeps the good, the messy, and the
+                      Say it out loud, or write it down. d-dairy keeps the good, the messy, and the
                       ordinary.
                     </AppText>
 

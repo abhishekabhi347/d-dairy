@@ -43,7 +43,7 @@ describe('buildMarkdownExport', () => {
   const markdown = buildMarkdownExport(DATA, NOW);
 
   it('starts with a title and export date', () => {
-    expect(markdown.startsWith('# ddairy — my pages')).toBe(true);
+    expect(markdown.startsWith('# d-dairy — my pages')).toBe(true);
     expect(markdown).toContain('_Exported 6 November 2026_');
   });
 
@@ -68,7 +68,7 @@ describe('buildMarkdownExport', () => {
   });
 
   it('ends with a gentle footer', () => {
-    expect(markdown.trimEnd().endsWith('Made with ddairy. A softer place for your days.')).toBe(
+    expect(markdown.trimEnd().endsWith('Made with d-dairy. A softer place for your days.')).toBe(
       true,
     );
   });
@@ -85,15 +85,15 @@ describe('exportJournal', () => {
       .mockResolvedValue({ action: 'sharedAction', activityType: undefined });
     await expect(exportJournal(DATA)).resolves.toBe('shared');
     expect(share).toHaveBeenCalledWith({
-      title: 'My ddairy pages',
-      message: expect.stringContaining('# ddairy — my pages'),
+      title: 'My d-dairy pages',
+      message: expect.stringContaining('# d-dairy — my pages'),
     });
   });
 
   it('downloads a markdown file on web', async () => {
     const click = jest.fn();
     const createElement = jest.fn(() => ({ href: '', download: '', click }));
-    const createObjectURL = jest.fn(() => 'blob:ddairy');
+    const createObjectURL = jest.fn(() => 'blob:d-dairy');
     const revokeObjectURL = jest.fn();
     const originalDocument = (globalThis as { document?: unknown }).document;
     const originalUrl = globalThis.URL;
@@ -111,7 +111,7 @@ describe('exportJournal', () => {
       expect(createElement).toHaveBeenCalledWith('a');
       expect(click).toHaveBeenCalledTimes(1);
       expect(createObjectURL).toHaveBeenCalledTimes(1);
-      expect(revokeObjectURL).toHaveBeenCalledWith('blob:ddairy');
+      expect(revokeObjectURL).toHaveBeenCalledWith('blob:d-dairy');
     } finally {
       (globalThis as { document?: unknown }).document = originalDocument;
       globalThis.URL = originalUrl;

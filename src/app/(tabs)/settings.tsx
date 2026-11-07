@@ -99,7 +99,7 @@ export default function SettingsScreen() {
             Settings
           </AppText>
           <AppText variant="body" style={styles.subtitle}>
-            Shape how ddairy listens, looks, and keeps your words.
+            Shape how d-dairy listens, looks, and keeps your words.
           </AppText>
         </View>
 
@@ -280,7 +280,7 @@ export default function SettingsScreen() {
           <View style={[styles.aboutMark, { backgroundColor: colors.accentSoft }]}>
             <Feather name="feather" size={20} color={colors.accent} />
           </View>
-          <AppText variant="heading">ddairy</AppText>
+          <AppText variant="heading">d-dairy</AppText>
           <AppText variant="bodySmall" align="center" style={styles.aboutText}>
             A softer place for your days. Made for slow mornings, long walks, and the things you
             want to remember.

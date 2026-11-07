@@ -93,7 +93,7 @@ export function DictationPanel({
       subtitle={
         hasError
           ? 'Your words are safe. You can pick up again whenever you like.'
-          : 'Speak naturally. ddairy will tidy the punctuation as you go.'
+          : 'Speak naturally. d-dairy will tidy the punctuation as you go.'
       }
       testID="dictation-panel">
       <View style={styles.content}>
@@ -217,7 +217,7 @@ export function DictationPanel({
         <View style={styles.privacy}>
           <Feather name="shield" size={12} color={colors.textTertiary} />
           <AppText variant="caption" align="center">
-            Your voice is transcribed by your device’s speech engine. ddairy stores only the words
+            Your voice is transcribed by your device’s speech engine. d-dairy stores only the words
             you keep.
           </AppText>
         </View>

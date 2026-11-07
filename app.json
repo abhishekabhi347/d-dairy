@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "ddairy",
-    "slug": "ddairy",
+    "name": "d-dairy",
+    "slug": "d-dairy",
     "description": "A softer place for your days. Dictate diary entries, keep a main diary, and make extra books for everything else.",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
-    "scheme": "ddairy",
+    "scheme": "d-dairy",
     "userInterfaceStyle": "automatic",
     "primaryColor": "#C25E46",
     "ios": {
@@ -30,8 +30,8 @@
     "web": {
       "output": "single",
       "favicon": "./assets/images/favicon.png",
-      "name": "ddairy",
-      "shortName": "ddairy",
+      "name": "d-dairy",
+      "shortName": "d-dairy",
       "themeColor": "#C25E46",
       "backgroundColor": "#F5EFE4"
     },
@@ -54,8 +54,8 @@
       [
         "expo-speech-recognition",
         {
-          "microphonePermission": "ddairy uses the microphone so you can speak your diary entries instead of typing them.",
-          "speechRecognitionPermission": "ddairy turns your spoken words into journal text using your device's speech recognition.",
+          "microphonePermission": "d-dairy uses the microphone so you can speak your diary entries instead of typing them.",
+          "speechRecognitionPermission": "d-dairy turns your spoken words into journal text using your device's speech recognition.",
           "androidSpeechServicePackages": [
             "com.google.android.googlequicksearchbox",
             "com.google.android.tts"

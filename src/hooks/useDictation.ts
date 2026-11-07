@@ -61,7 +61,7 @@ function resolveAvailability(): DictationAvailability {
     return {
       available: false,
       reason: expoGo
-        ? 'Voice needs a development build. Expo Go does not include a speech engine. Run “npx expo run:ios” or “npx expo run:android”, or try ddairy in Chrome on the web.'
+        ? 'Voice needs a development build. Expo Go does not include a speech engine. Run “npx expo run:ios” or “npx expo run:android”, or try d-dairy in Chrome on the web.'
         : 'The speech engine is not included in this build. Rebuild the app with the expo-speech-recognition plugin to dictate.',
     };
   }
@@ -303,14 +303,14 @@ export function useDictation({
         if (!permission.granted) {
           activeRef.current = false;
           setError(
-            'ddairy needs microphone and speech recognition access. You can enable both in Settings.',
+            'd-dairy needs microphone and speech recognition access. You can enable both in Settings.',
           );
           setStatusSafe('error');
           return;
         }
       } catch {
         activeRef.current = false;
-        setError('ddairy could not ask for microphone access. You can still type instead.');
+        setError('d-dairy could not ask for microphone access. You can still type instead.');
         setStatusSafe('error');
         return;
       }

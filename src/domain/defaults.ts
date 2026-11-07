@@ -10,7 +10,7 @@ export const DEFAULT_SETTINGS: Settings = {
   dictationLanguage: 'en-US',
 };
 
-export const WELCOME_BODY = `Welcome to ddairy.
+export const WELCOME_BODY = `Welcome to d-dairy.
 
 Tap the microphone and talk about your day. Your words will appear here, softly tidied up as you speak.
 

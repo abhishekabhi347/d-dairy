@@ -7,7 +7,7 @@ import type { AppData } from '@/domain/types';
 
 export function buildMarkdownExport(data: AppData, now: number = Date.now()): string {
   const lines: string[] = [];
-  lines.push('# ddairy — my pages');
+  lines.push('# d-dairy — my pages');
   lines.push('');
   lines.push(`_Exported ${formatLongDate(now)}_`);
   lines.push('');
@@ -39,13 +39,13 @@ export function buildMarkdownExport(data: AppData, now: number = Date.now()): st
   }
 
   lines.push('---');
-  lines.push('Made with ddairy. A softer place for your days.');
+  lines.push('Made with d-dairy. A softer place for your days.');
   return lines.join('\n');
 }
 
 export async function exportJournal(data: AppData): Promise<'shared' | 'downloaded'> {
   const markdown = buildMarkdownExport(data);
-  const fileName = `ddairy-${localDateKey(Date.now())}.md`;
+  const fileName = `d-dairy-${localDateKey(Date.now())}.md`;
 
   if (Platform.OS === 'web') {
     const scope = globalThis as unknown as {
@@ -75,7 +75,7 @@ export async function exportJournal(data: AppData): Promise<'shared' | 'download
   }
 
   await Share.share({
-    title: 'My ddairy pages',
+    title: 'My d-dairy pages',
     message: markdown,
   });
   return 'shared';

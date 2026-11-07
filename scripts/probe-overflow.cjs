@@ -1,5 +1,5 @@
 /* Find the ancestor chain that overflows the viewport on web. */
-const WebSocket = require('/Users/abhishekrampi/ddairy/node_modules/ws');
+const WebSocket = require('/Users/abhishekrampi/d-dairy/node_modules/ws');
 const PORT = 9333;
 
 function getWsUrl() {

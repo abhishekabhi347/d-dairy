@@ -1,5 +1,5 @@
 /* Hard reload, open the sheet, measure, screenshot. */
-const WebSocket = require('/Users/abhishekrampi/ddairy/node_modules/ws');
+const WebSocket = require('/Users/abhishekrampi/d-dairy/node_modules/ws');
 const fs = require('fs');
 const PORT = 9333;
 (async () => {

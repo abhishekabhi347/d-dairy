@@ -61,7 +61,7 @@ export function AppProvider({ children }: PropsWithChildren) {
         if (!mounted) return;
         setStorageError('Your device storage could not be read. New words may not be saved.');
         dispatch({ type: 'HYDRATE', data: createInitialData() });
-        console.warn('ddairy: could not load local data', error);
+        console.warn('d-dairy: could not load local data', error);
       } finally {
         if (mounted) setStatus('ready');
       }
@@ -85,7 +85,7 @@ export function AppProvider({ children }: PropsWithChildren) {
     } catch (error) {
       setSaveState('error');
       setStorageError('Your latest changes could not be saved to this device.');
-      console.warn('ddairy: could not save local data', error);
+      console.warn('d-dairy: could not save local data', error);
     }
   }, []);
 

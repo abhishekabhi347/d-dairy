@@ -1,10 +1,10 @@
-# ddairy — Store Metadata
+# d-dairy — Store Metadata
 
 Working store listing for the App Store and Google Play.
 
 ## App identity
-- **Name:** ddairy (≤30 chars)
-- **Bundle id / Package:** `com.ddairy.app`
+- **Name:** d-dairy (≤30 chars)
+- **Bundle id / Package:** `com.d-dairy.app`
 - **Category:** Lifestyle (iOS) / Lifestyle (Android)
 - **Secondary keywords:** journaling, mental wellness
 - **Version:** 1.0.0
@@ -17,7 +17,7 @@ Working store listing for the App Store and Google Play.
 
 ## Description
 
-**ddairy — a softer place for your days.**
+**d-dairy — a softer place for your days.**
 
 Speak your diary. Press the mic, talk about your day, and watch your words appear,
 punctuated and tidy. No account, no cloud — your pages live on your device.

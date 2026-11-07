@@ -11,8 +11,9 @@ import {
 import { sanitizeEntry } from '@/domain/reducer';
 import { DATA_VERSION, type AppData, type Book, type Entry, type Settings } from '@/domain/types';
 
-export const STORAGE_KEY = '@ddairy/app-data/v1';
-export const LEGACY_STORAGE_KEY = '@ddairy/app-data';
+export const STORAGE_KEY = '@d-dairy/app-data/v1';
+export const LEGACY_STORAGE_KEY = '@ddairy/app-data/v1';
+export const LEGACY_ORIGINAL_STORAGE_KEY = '@ddairy/app-data';
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -180,7 +181,12 @@ export async function loadAppData(
 ): Promise<AppData | null> {
   const current = parseAppData(await storage.getItem(STORAGE_KEY), now);
   if (current) return current;
-  return parseAppData(await storage.getItem(LEGACY_STORAGE_KEY), now);
+  // Fall back to pre-rename keys so existing installs keep their pages.
+  for (const key of [LEGACY_STORAGE_KEY, LEGACY_ORIGINAL_STORAGE_KEY]) {
+    const legacy = parseAppData(await storage.getItem(key), now);
+    if (legacy) return legacy;
+  }
+  return null;
 }
 
 export async function saveAppData(
@@ -193,4 +199,5 @@ export async function saveAppData(
 export async function clearAppData(storage: StorageLike = AsyncStorage): Promise<void> {
   await storage.removeItem(STORAGE_KEY);
   await storage.removeItem(LEGACY_STORAGE_KEY);
+  await storage.removeItem(LEGACY_ORIGINAL_STORAGE_KEY);
 }

@@ -1,5 +1,5 @@
 /* Inspect KeyboardAvoidingView children + z-indexes of floating UI. */
-const WebSocket = require('/Users/abhishekrampi/ddairy/node_modules/ws');
+const WebSocket = require('/Users/abhishekrampi/d-dairy/node_modules/ws');
 const PORT = 9333;
 function getWsUrl() {
   return fetch(`http://127.0.0.1:${PORT}/json/list`)

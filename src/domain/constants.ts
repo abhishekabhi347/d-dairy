@@ -1,6 +1,6 @@
 import type { DictationLanguage, JournalKeyword, Mood, MoodId } from './types';
 
-export const APP_NAME = 'ddairy';
+export const APP_NAME = 'd-dairy';
 export const APP_TAGLINE = 'A softer place for your days.';
 
 export const MOODS: readonly Mood[] = [
