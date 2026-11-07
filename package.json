@@ -3,15 +3,23 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "dependencies": {
+    "@expo-google-fonts/dm-sans": "^0.4.2",
+    "@expo-google-fonts/fraunces": "^0.4.1",
     "@expo/ui": "~58.0.27",
+    "@expo/vector-icons": "^15.0.2",
+    "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "~58.0.23",
+    "expo-blur": "~58.0.5",
     "expo-constants": "~58.0.15",
     "expo-device": "~58.0.5",
     "expo-font": "~58.0.11",
     "expo-glass-effect": "~58.0.5",
+    "expo-haptics": "~58.0.7",
     "expo-image": "~58.0.18",
+    "expo-linear-gradient": "~58.0.3",
     "expo-linking": "~58.0.16",
     "expo-router": "~58.0.30",
+    "expo-speech-recognition": "^58.0.1",
     "expo-splash-screen": "~58.0.13",
     "expo-status-bar": "~58.0.4",
     "expo-symbols": "~58.0.4",
@@ -28,7 +36,15 @@
     "react-native-worklets": "0.13.0"
   },
   "devDependencies": {
+    "@testing-library/react-native": "^14.1.0",
+    "@types/jest": "^30.0.0",
     "@types/react": "~19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "^58.0.4",
+    "jest": "^30.5.2",
+    "jest-expo": "^58.0.14",
+    "sharp": "^0.35.5",
+    "test-renderer": "^1.3.1",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -37,7 +53,14 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --runInBand",
+    "assets": "node scripts/generate-assets.mjs",
+    "export:web": "expo export --platform web",
+    "doctor": "expo-doctor"
   },
   "private": true
 }
