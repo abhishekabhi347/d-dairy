@@ -65,6 +65,60 @@ export function SheetModal({
 
   const alignCenter = variant === 'center' || isTablet;
 
+  const renderCard = () => (
+    <Animated.View
+      style={[
+        styles.card,
+        {
+          backgroundColor: colors.surface,
+          borderColor: colors.border,
+          paddingBottom: Math.max(insets.bottom, 18),
+          opacity: progress,
+          transform: [
+            {
+              translateY: progress.interpolate({
+                inputRange: [0, 1],
+                outputRange: [40, 0],
+              }),
+            },
+          ],
+        },
+        contentStyle,
+      ]}>
+      <View style={styles.handleWrap}>
+        <View style={[styles.handle, { backgroundColor: colors.borderStrong }]} />
+      </View>
+      {title || subtitle ? (
+        <View style={styles.header}>
+          <View style={styles.headerText}>
+            {title ? <AppText variant="heading">{title}</AppText> : null}
+            {subtitle ? (
+              <AppText variant="bodySmall" style={styles.subtitle}>
+                {subtitle}
+              </AppText>
+            ) : null}
+          </View>
+          <IconButton
+            icon="x"
+            accessibilityLabel="Close"
+            variant="surface"
+            onPress={onClose}
+            size={38}
+            iconSize={18}
+          />
+        </View>
+      ) : null}
+      <ScrollView
+        bounces={false}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+        style={styles.scroll}
+        contentContainerStyle={styles.scrollContent}>
+        {children}
+      </ScrollView>
+    </Animated.View>
+  );
+
   return (
     <Modal
       visible={visible}
@@ -82,62 +136,18 @@ export function SheetModal({
           onPress={onClose}
           style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay }]}
         />
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-          pointerEvents="box-none"
-          style={styles.keyboardView}>
-          <Animated.View
-            style={[
-              styles.card,
-              {
-                backgroundColor: colors.surface,
-                borderColor: colors.border,
-                paddingBottom: Math.max(insets.bottom, 18),
-                opacity: progress,
-                transform: [
-                  {
-                    translateY: progress.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [40, 0],
-                    }),
-                  },
-                ],
-              },
-              contentStyle,
-            ]}>
-            <View style={styles.handleWrap}>
-              <View style={[styles.handle, { backgroundColor: colors.borderStrong }]} />
-            </View>
-            {title || subtitle ? (
-              <View style={styles.header}>
-                <View style={styles.headerText}>
-                  {title ? <AppText variant="heading">{title}</AppText> : null}
-                  {subtitle ? (
-                    <AppText variant="bodySmall" style={styles.subtitle}>
-                      {subtitle}
-                    </AppText>
-                  ) : null}
-                </View>
-                <IconButton
-                  icon="x"
-                  accessibilityLabel="Close"
-                  variant="surface"
-                  onPress={onClose}
-                  size={38}
-                  iconSize={18}
-                />
-              </View>
-            ) : null}
-            <ScrollView
-              bounces={false}
-              keyboardShouldPersistTaps="handled"
-              showsVerticalScrollIndicator={false}
-              style={styles.scroll}
-              contentContainerStyle={styles.scrollContent}>
-              {children}
-            </ScrollView>
-          </Animated.View>
-        </KeyboardAvoidingView>
+        {Platform.OS === 'web' ? (
+          <View pointerEvents="box-none" style={styles.keyboardView}>
+            {renderCard()}
+          </View>
+        ) : (
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+            pointerEvents="box-none"
+            style={styles.keyboardView}>
+            {renderCard()}
+          </KeyboardAvoidingView>
+        )}
       </View>
     </Modal>
   );

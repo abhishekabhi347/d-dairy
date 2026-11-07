@@ -117,7 +117,7 @@ export default function RootLayout() {
   });
 
   return (
-    <GestureHandlerRootView style={styles.flex}>
+    <GestureHandlerRootView style={styles.root}>
       <SafeAreaProvider>
         <AppProvider>
           <ThemeProvider>
@@ -134,6 +134,15 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   flex: {
     flex: 1,
+  },
+  /**
+   * On web, RN modals render into a body-level portal with no z-index, so any
+   * app-level zIndex (e.g. the floating tab bar) would paint above them.
+   * Making the root a stacking context keeps every in-app layer below modals.
+   */
+  root: {
+    flex: 1,
+    zIndex: 0,
   },
   loading: {
     flex: 1,
