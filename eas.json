@@ -17,10 +17,5 @@
   },
   "submit": {
     "production": {}
-  },
-  "update": {
-    "enabled": true,
-    "checkAutomatically": "ON_LOAD",
-    "fallbackToCacheTimeout": 0
   }
 }
